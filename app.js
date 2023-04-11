@@ -22,6 +22,7 @@ const connectDB=require('./db/connect')
 //middleware
 const errorHandlerMiddleware=require('./middleware/errorHandlerMiddleware')
 const notFound=require('./middleware/notFound')
+const { StatusCodes } = require('http-status-codes')
 
 app.set('trust proxy',1);
 app.use(
@@ -39,7 +40,7 @@ app.use(cors())
 app.use(xss())
 
 
-app.get('/',(res,req)=>{
+app.get('/',(req,res)=>{
     res.send("Jobs api")
 })
 // routes
