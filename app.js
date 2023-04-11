@@ -39,6 +39,9 @@ app.use(cors())
 app.use(xss())
 
 
+app.get('/',(res,req)=>{
+    res.send("Jobs api")
+})
 // routes
 
 app.use('/api/v1/auth',authRouter)
